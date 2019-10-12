@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name AIR_SRV_SIX-rescue)(type Legacy)(uri ${KIPRJMOD}/AIR_SRV_SIX-rescue.lib)(options "")(descr ""))
+)

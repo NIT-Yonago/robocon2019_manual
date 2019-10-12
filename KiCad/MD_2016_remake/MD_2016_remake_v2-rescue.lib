@@ -1,0 +1,51 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# EP2-3L3SAb-SamacSys_Parts
+#
+DEF EP2-3L3SAb-SamacSys_Parts K 0 30 Y Y 1 F N
+F0 "K" 650 300 50 H V L CNN
+F1 "EP2-3L3SAb-SamacSys_Parts" 650 200 50 H V L CNN
+F2 "EP2_H-BRIDGE" 650 100 50 H I L CNN
+F3 "http://akizukidenshi.com/download/ds/nec/EP1_EP2_datasheet.pdf" 650 0 50 H I L CNN
+F4 "Twin automotive relay" 650 -100 50 H I L CNN "Description"
+F5 "NEC" 650 -300 50 H I L CNN "Manufacturer_Name"
+F6 "EP2-3L3SAb" 650 -400 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+P 5 0 1 6 200 100 600 100 600 -400 200 -400 200 100 N
+X 1 1 0 0 200 R 50 50 0 0 B
+X 2 2 0 -100 200 R 50 50 0 0 B
+X 3 3 0 -200 200 R 50 50 0 0 B
+X 4 4 0 -300 200 R 50 50 0 0 B
+X 5 5 800 0 200 L 50 50 0 0 B
+X 6 6 800 -100 200 L 50 50 0 0 B
+X 7 7 800 -200 200 L 50 50 0 0 B
+X 8 8 800 -300 200 L 50 50 0 0 B
+ENDDRAW
+ENDDEF
+#
+# TLP152(E(T-SamacSys_Parts
+#
+DEF TLP152(E(T-SamacSys_Parts IC 0 30 Y Y 1 F N
+F0 "IC" 1050 300 50 H V L CNN
+F1 "TLP152(E(T-SamacSys_Parts" 1050 200 50 H V L CNN
+F2 "SOIC127P700X220-6N" 1050 100 50 H I L CNN
+F3 "http://uk.rs-online.com/web/p/products/8851275P" 1050 0 50 H I L CNN
+F4 "Toshiba TLP152(E(T Photo IC Output Optocoupler, Surface Mount, 5-Pin SO6" 1050 -100 50 H I L CNN "Description"
+F5 "2.2" 1050 -200 50 H I L CNN "Height"
+F6 "8851275P" 1050 -300 50 H I L CNN "RS Part Number"
+F7 "http://uk.rs-online.com/web/p/products/8851275P" 1050 -400 50 H I L CNN "RS Price/Stock"
+F8 "Toshiba" 1050 -500 50 H I L CNN "Manufacturer_Name"
+F9 "TLP152(E(T" 1050 -600 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+P 5 0 1 6 200 100 1000 100 1000 -300 200 -300 200 100 N
+X ANODE 1 0 0 200 R 50 50 0 0 B
+X NO_PIN 2 0 -100 200 R 50 50 0 0 B
+X CATHODE 3 0 -200 200 R 50 50 0 0 B
+X GND 4 1200 -200 200 L 50 50 0 0 B
+X VO 5 1200 -100 200 L 50 50 0 0 B
+X VCC 6 1200 0 200 L 50 50 0 0 B
+ENDDRAW
+ENDDEF
+#
+#End Library

@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name MD_2016_remake-rescue)(type Legacy)(uri ${KIPRJMOD}/MD_2016_remake-rescue.lib)(options "")(descr ""))
+  (lib (name MD_2016_remake_v2-rescue)(type Legacy)(uri ${KIPRJMOD}/MD_2016_remake_v2-rescue.lib)(options "")(descr ""))
+)

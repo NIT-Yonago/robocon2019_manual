@@ -1,0 +1,408 @@
+EESchema Schematic File Version 4
+LIBS:MD_2016_remake-cache
+EELAYER 29 0
+EELAYER END
+$Descr User 5906 4724
+encoding utf-8
+Sheet 3 4
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L SamacSys_Parts:EP2-3L3SAb K?
+U 1 1 5D00B30D
+P 2600 1400
+AR Path="/5D00B30D" Ref="K?"  Part="1" 
+AR Path="/5CEF7FFC/5D00B30D" Ref="K2"  Part="1" 
+AR Path="/5CEF7914/5D00B30D" Ref="K?"  Part="1" 
+F 0 "K2" H 3000 950 50  0000 C CNN
+F 1 "EP2-3L3SAb" H 3000 1550 50  0000 C CNN
+F 2 "SamacSys_Parts:EP2_H-BRIDGE" H 3250 1500 50  0001 L CNN
+F 3 "http://akizukidenshi.com/download/ds/nec/EP1_EP2_datasheet.pdf" H 3250 1400 50  0001 L CNN
+F 4 "Twin automotive relay" H 3250 1300 50  0001 L CNN "Description"
+F 5 "NEC" H 3250 1100 50  0001 L CNN "Manufacturer_Name"
+F 6 "EP2-3L3SAb" H 3250 1000 50  0001 L CNN "Manufacturer_Part_Number"
+	1    2600 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Isolator:TLP627 U?
+U 1 1 5D00B30E
+P 1350 1600
+AR Path="/5D00B30E" Ref="U?"  Part="1" 
+AR Path="/5CEF7FFC/5D00B30E" Ref="U8"  Part="1" 
+AR Path="/5CEF7914/5D00B30E" Ref="U?"  Part="1" 
+F 0 "U8" H 1550 1800 50  0000 C CNN
+F 1 "TLP627" H 1200 1800 50  0000 C CNN
+F 2 "Package_DIP:DIP-4_W7.62mm" H 1050 1400 50  0001 L CIN
+F 3 "https://toshiba.semicon-storage.com/info/docget.jsp?did=16914&prodName=TLP627" H 1350 1600 50  0001 L CNN
+	1    1350 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR?
+U 1 1 5D00B30F
+P 3750 1500
+AR Path="/5D00B30F" Ref="#PWR?"  Part="1" 
+AR Path="/5CEF7FFC/5D00B30F" Ref="#PWR051"  Part="1" 
+AR Path="/5CEF7914/5D00B30F" Ref="#PWR?"  Part="1" 
+F 0 "#PWR051" H 3750 1350 50  0001 C CNN
+F 1 "+12V" H 3765 1673 50  0000 C CNN
+F 2 "" H 3750 1500 50  0001 C CNN
+F 3 "" H 3750 1500 50  0001 C CNN
+	1    3750 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3750 1500 3400 1500
+$Comp
+L power:+12V #PWR?
+U 1 1 5D00B310
+P 2500 1600
+AR Path="/5D00B310" Ref="#PWR?"  Part="1" 
+AR Path="/5CEF7FFC/5D00B310" Ref="#PWR052"  Part="1" 
+AR Path="/5CEF7914/5D00B310" Ref="#PWR?"  Part="1" 
+F 0 "#PWR052" H 2500 1450 50  0001 C CNN
+F 1 "+12V" H 2350 1650 50  0000 C CNN
+F 2 "" H 2500 1600 50  0001 C CNN
+F 3 "" H 2500 1600 50  0001 C CNN
+	1    2500 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 1600 2500 1600
+$Comp
+L Motor:Motor_DC M?
+U 1 1 5CF07369
+P 4250 1500
+AR Path="/5CF07369" Ref="M?"  Part="1" 
+AR Path="/5CEF7FFC/5CF07369" Ref="M2"  Part="1" 
+AR Path="/5CEF7914/5CF07369" Ref="M?"  Part="1" 
+F 0 "M2" H 4408 1496 50  0000 L CNN
+F 1 "xt60" H 4408 1405 50  0000 L CNN
+F 2 "Morita:XT60PT-F" H 4250 1410 50  0001 C CNN
+F 3 "~" H 4250 1410 50  0001 C CNN
+	1    4250 1500
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	4250 1700 3400 1700
+Wire Wire Line
+	2600 1400 2600 1200
+Wire Wire Line
+	2600 1200 4250 1200
+Wire Wire Line
+	2600 1500 2000 1500
+Wire Wire Line
+	3400 1600 3500 1600
+Wire Wire Line
+	3500 1600 3500 1900
+Wire Wire Line
+	3500 1900 2250 1900
+$Comp
+L Isolator:TLP627 U?
+U 1 1 5D00B312
+P 1350 2000
+AR Path="/5D00B312" Ref="U?"  Part="1" 
+AR Path="/5CEF7FFC/5D00B312" Ref="U9"  Part="1" 
+AR Path="/5CEF7914/5D00B312" Ref="U?"  Part="1" 
+F 0 "U9" H 1550 2200 50  0000 C CNN
+F 1 "TLP627" H 1200 2200 50  0000 C CNN
+F 2 "Package_DIP:DIP-4_W7.62mm" H 1050 1800 50  0001 L CIN
+F 3 "https://toshiba.semicon-storage.com/info/docget.jsp?did=16914&prodName=TLP627" H 1350 2000 50  0001 L CNN
+	1    1350 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDPWR #PWR?
+U 1 1 5D00B313
+P 2000 1700
+AR Path="/5D00B313" Ref="#PWR?"  Part="1" 
+AR Path="/5CEF7FFC/5D00B313" Ref="#PWR054"  Part="1" 
+AR Path="/5CEF7914/5D00B313" Ref="#PWR?"  Part="1" 
+F 0 "#PWR054" H 2000 1500 50  0001 C CNN
+F 1 "GNDPWR" H 1900 1750 50  0000 C CNN
+F 2 "" H 2000 1650 50  0001 C CNN
+F 3 "" H 2000 1650 50  0001 C CNN
+	1    2000 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDPWR #PWR?
+U 1 1 5D00B314
+P 2000 2100
+AR Path="/5D00B314" Ref="#PWR?"  Part="1" 
+AR Path="/5CEF7FFC/5D00B314" Ref="#PWR056"  Part="1" 
+AR Path="/5CEF7914/5D00B314" Ref="#PWR?"  Part="1" 
+F 0 "#PWR056" H 2000 1900 50  0001 C CNN
+F 1 "GNDPWR" H 2200 2050 50  0000 C CNN
+F 2 "" H 2000 2050 50  0001 C CNN
+F 3 "" H 2000 2050 50  0001 C CNN
+	1    2000 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2000 2100 1750 2100
+Wire Wire Line
+	1750 1700 2000 1700
+Wire Wire Line
+	3400 1400 3600 1400
+$Comp
+L Device:Q_NMOS_GDS Q?
+U 1 1 5D00B315
+P 3500 2400
+AR Path="/5D00B315" Ref="Q?"  Part="1" 
+AR Path="/5CEF7FFC/5D00B315" Ref="Q2"  Part="1" 
+AR Path="/5CEF7914/5D00B315" Ref="Q?"  Part="1" 
+F 0 "Q2" H 3706 2446 50  0000 L CNN
+F 1 "Q_NMOS_GDS" H 3706 2355 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-247-3_Vertical" H 3700 2500 50  0001 C CNN
+F 3 "~" H 3500 2400 50  0001 C CNN
+	1    3500 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 1700 2600 1700
+$Comp
+L SamacSys_Parts:TLP152(E(T IC?
+U 1 1 5D00B317
+P 950 2300
+AR Path="/5D00B317" Ref="IC?"  Part="1" 
+AR Path="/5CEF7FFC/5D00B317" Ref="IC2"  Part="1" 
+AR Path="/5CEF7914/5D00B317" Ref="IC?"  Part="1" 
+F 0 "IC2" H 1250 1950 50  0000 C CNN
+F 1 "TLP152" H 1600 1950 50  0000 C CNN
+F 2 "Package_SO:SO-5_4.4x3.6mm_P1.27mm" H 2000 2400 50  0001 L CNN
+F 3 "http://uk.rs-online.com/web/p/products/8851275P" H 2000 2300 50  0001 L CNN
+F 4 "Toshiba TLP152(E(T Photo IC Output Optocoupler, Surface Mount, 5-Pin SO6" H 2000 2200 50  0001 L CNN "Description"
+F 5 "2.2" H 2000 2100 50  0001 L CNN "Height"
+F 6 "8851275P" H 2000 2000 50  0001 L CNN "RS Part Number"
+F 7 "http://uk.rs-online.com/web/p/products/8851275P" H 2000 1900 50  0001 L CNN "RS Price/Stock"
+F 8 "Toshiba" H 2000 1800 50  0001 L CNN "Manufacturer_Name"
+F 9 "TLP152(E(T" H 2000 1700 50  0001 L CNN "Manufacturer_Part_Number"
+	1    950  2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5D00B318
+P 3450 2600
+AR Path="/5D00B318" Ref="R?"  Part="1" 
+AR Path="/5CEF7FFC/5D00B318" Ref="R19"  Part="1" 
+AR Path="/5CEF7914/5D00B318" Ref="R?"  Part="1" 
+F 0 "R19" V 3350 2600 50  0000 C CNN
+F 1 "N/A" V 3450 2600 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3380 2600 50  0001 C CNN
+F 3 "~" H 3450 2600 50  0001 C CNN
+	1    3450 2600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5CF073AB
+P 2750 2400
+AR Path="/5CF073AB" Ref="R?"  Part="1" 
+AR Path="/5CEF7FFC/5CF073AB" Ref="R18"  Part="1" 
+AR Path="/5CEF7914/5CF073AB" Ref="R?"  Part="1" 
+F 0 "R18" V 2650 2400 50  0000 C CNN
+F 1 "Rg" V 2750 2400 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 2680 2400 50  0001 C CNN
+F 3 "~" H 2750 2400 50  0001 C CNN
+	1    2750 2400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2600 2400 2150 2400
+Wire Wire Line
+	2900 2400 3300 2400
+Wire Wire Line
+	3300 2400 3300 2600
+$Comp
+L power:GNDPWR #PWR?
+U 1 1 5D00B31A
+P 3600 2700
+AR Path="/5D00B31A" Ref="#PWR?"  Part="1" 
+AR Path="/5CEF7FFC/5D00B31A" Ref="#PWR060"  Part="1" 
+AR Path="/5CEF7914/5D00B31A" Ref="#PWR?"  Part="1" 
+F 0 "#PWR060" H 3600 2500 50  0001 C CNN
+F 1 "GNDPWR" H 3800 2650 50  0000 C CNN
+F 2 "" H 3600 2650 50  0001 C CNN
+F 3 "" H 3600 2650 50  0001 C CNN
+	1    3600 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 2700 3600 2600
+$Comp
+L power:GND #PWR?
+U 1 1 5D00B31B
+P 950 1700
+AR Path="/5D00B31B" Ref="#PWR?"  Part="1" 
+AR Path="/5CEF7FFC/5D00B31B" Ref="#PWR053"  Part="1" 
+AR Path="/5CEF7914/5D00B31B" Ref="#PWR?"  Part="1" 
+F 0 "#PWR053" H 950 1450 50  0001 C CNN
+F 1 "GND" H 850 1600 50  0000 C CNN
+F 2 "" H 950 1700 50  0001 C CNN
+F 3 "" H 950 1700 50  0001 C CNN
+	1    950  1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D00B31C
+P 950 2100
+AR Path="/5D00B31C" Ref="#PWR?"  Part="1" 
+AR Path="/5CEF7FFC/5D00B31C" Ref="#PWR055"  Part="1" 
+AR Path="/5CEF7914/5D00B31C" Ref="#PWR?"  Part="1" 
+F 0 "#PWR055" H 950 1850 50  0001 C CNN
+F 1 "GND" H 850 2000 50  0000 C CNN
+F 2 "" H 950 2100 50  0001 C CNN
+F 3 "" H 950 2100 50  0001 C CNN
+	1    950  2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CF073C9
+P 950 2500
+AR Path="/5CF073C9" Ref="#PWR?"  Part="1" 
+AR Path="/5CEF7FFC/5CF073C9" Ref="#PWR058"  Part="1" 
+AR Path="/5CEF7914/5CF073C9" Ref="#PWR?"  Part="1" 
+F 0 "#PWR058" H 950 2250 50  0001 C CNN
+F 1 "GND" H 850 2400 50  0000 C CNN
+F 2 "" H 950 2500 50  0001 C CNN
+F 3 "" H 950 2500 50  0001 C CNN
+	1    950  2500
+	1    0    0    -1  
+$EndComp
+NoConn ~ 950  2400
+$Comp
+L power:+12V #PWR?
+U 1 1 5D00B31E
+P 2300 2300
+AR Path="/5D00B31E" Ref="#PWR?"  Part="1" 
+AR Path="/5CEF7FFC/5D00B31E" Ref="#PWR057"  Part="1" 
+AR Path="/5CEF7914/5D00B31E" Ref="#PWR?"  Part="1" 
+F 0 "#PWR057" H 2300 2150 50  0001 C CNN
+F 1 "+12V" H 2450 2350 50  0000 C CNN
+F 2 "" H 2300 2300 50  0001 C CNN
+F 3 "" H 2300 2300 50  0001 C CNN
+	1    2300 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 2300 2150 2300
+$Comp
+L power:GNDPWR #PWR?
+U 1 1 5CF073D7
+P 2300 2500
+AR Path="/5CF073D7" Ref="#PWR?"  Part="1" 
+AR Path="/5CEF7FFC/5CF073D7" Ref="#PWR059"  Part="1" 
+AR Path="/5CEF7914/5CF073D7" Ref="#PWR?"  Part="1" 
+F 0 "#PWR059" H 2300 2300 50  0001 C CNN
+F 1 "GNDPWR" H 2500 2450 50  0000 C CNN
+F 2 "" H 2300 2450 50  0001 C CNN
+F 3 "" H 2300 2450 50  0001 C CNN
+	1    2300 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 2500 2150 2500
+$Comp
+L Device:C_Small C?
+U 1 1 5CF073DE
+P 2300 2400
+AR Path="/5CF073DE" Ref="C?"  Part="1" 
+AR Path="/5CEF7FFC/5CF073DE" Ref="C7"  Part="1" 
+AR Path="/5CEF7914/5CF073DE" Ref="C?"  Part="1" 
+F 0 "C7" H 2392 2446 50  0000 L CNN
+F 1 "0.1u" H 2392 2355 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2300 2400 50  0001 C CNN
+F 3 "~" H 2300 2400 50  0001 C CNN
+	1    2300 2400
+	1    0    0    -1  
+$EndComp
+Text HLabel 950  1500 0    50   Input ~ 0
+A
+Text HLabel 950  1900 0    50   Input ~ 0
+B
+Text HLabel 950  2300 0    50   Input ~ 0
+PWM
+Wire Wire Line
+	2500 1600 2500 1700
+Connection ~ 2500 1600
+$Comp
+L Diode:1N4148W D16
+U 1 1 5D9B8332
+P 2000 1350
+F 0 "D16" V 1954 1430 50  0000 L CNN
+F 1 "1N4148W" V 2045 1430 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-123" H 2000 1175 50  0001 C CNN
+F 3 "https://www.vishay.com/docs/85748/1n4148w.pdf" H 2000 1350 50  0001 C CNN
+	1    2000 1350
+	0    1    1    0   
+$EndComp
+Connection ~ 2000 1500
+Wire Wire Line
+	2000 1500 1750 1500
+$Comp
+L Diode:1N4148W D18
+U 1 1 5D9BA946
+P 2250 1750
+F 0 "D18" V 2204 1830 50  0000 L CNN
+F 1 "1N4148W" V 2295 1830 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-123" H 2250 1575 50  0001 C CNN
+F 3 "https://www.vishay.com/docs/85748/1n4148w.pdf" H 2250 1750 50  0001 C CNN
+	1    2250 1750
+	0    1    1    0   
+$EndComp
+Connection ~ 2250 1900
+Wire Wire Line
+	2250 1900 1750 1900
+Wire Wire Line
+	2500 1600 2250 1600
+$Comp
+L power:+12V #PWR050
+U 1 1 5D9BB717
+P 2000 1200
+F 0 "#PWR050" H 2000 1050 50  0001 C CNN
+F 1 "+12V" H 2015 1373 50  0000 C CNN
+F 2 "" H 2000 1200 50  0001 C CNN
+F 3 "" H 2000 1200 50  0001 C CNN
+	1    2000 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3750 1850 3600 1850
+$Comp
+L Device:D_Schottky D?
+U 1 1 5D9C6521
+P 3750 1700
+AR Path="/5CEF7914/5D9C6521" Ref="D?"  Part="1" 
+AR Path="/5CEF7FFC/5D9C6521" Ref="D17"  Part="1" 
+F 0 "D17" V 3704 1779 50  0000 L CNN
+F 1 "SK54" V 3795 1779 50  0000 L CNN
+F 2 "Diode_SMD:D_SMC" H 3750 1700 50  0001 C CNN
+F 3 "~" H 3750 1700 50  0001 C CNN
+	1    3750 1700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3750 1550 3750 1500
+Connection ~ 3750 1500
+Wire Wire Line
+	3600 1400 3600 1850
+Connection ~ 3600 1850
+Wire Wire Line
+	3600 1850 3600 2200
+Connection ~ 2300 2300
+Connection ~ 2300 2500
+Connection ~ 3300 2400
+Connection ~ 3600 2600
+$EndSCHEMATC

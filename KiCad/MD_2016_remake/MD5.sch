@@ -1,0 +1,297 @@
+EESchema Schematic File Version 4
+LIBS:MD_2016_remake_v2-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 6 6
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MD_2016_remake_v2-rescue:EP2-3L3SAb-SamacSys_Parts K5
+U 1 1 5CF2564E
+P 9200 5100
+F 0 "K5" H 9600 4650 50  0000 C CNN
+F 1 "EP2-3L3SAb" H 9600 5250 50  0000 C CNN
+F 2 "SamacSys_Parts:EP2_H-BRIDGE" H 9850 5200 50  0001 L CNN
+F 3 "http://akizukidenshi.com/download/ds/nec/EP1_EP2_datasheet.pdf" H 9850 5100 50  0001 L CNN
+F 4 "Twin automotive relay" H 9850 5000 50  0001 L CNN "Description"
+F 5 "NEC" H 9850 4800 50  0001 L CNN "Manufacturer_Name"
+F 6 "EP2-3L3SAb" H 9850 4700 50  0001 L CNN "Manufacturer_Part_Number"
+	1    9200 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Isolator:TLP627 U9
+U 1 1 5CF25654
+P 7950 5300
+F 0 "U9" H 8150 5500 50  0000 C CNN
+F 1 "TLP627" H 7800 5500 50  0000 C CNN
+F 2 "Package_DIP:DIP-4_W7.62mm" H 7650 5100 50  0001 L CIN
+F 3 "https://toshiba.semicon-storage.com/info/docget.jsp?did=16914&prodName=TLP627" H 7950 5300 50  0001 L CNN
+	1    7950 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR067
+U 1 1 5CF2565A
+P 10350 5200
+F 0 "#PWR067" H 10350 5050 50  0001 C CNN
+F 1 "+12V" H 10365 5373 50  0000 C CNN
+F 2 "" H 10350 5200 50  0001 C CNN
+F 3 "" H 10350 5200 50  0001 C CNN
+	1    10350 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10350 5200 10000 5200
+$Comp
+L power:+12V #PWR062
+U 1 1 5CF25661
+P 8850 5300
+F 0 "#PWR062" H 8850 5150 50  0001 C CNN
+F 1 "+12V" H 8700 5350 50  0000 C CNN
+F 2 "" H 8850 5300 50  0001 C CNN
+F 3 "" H 8850 5300 50  0001 C CNN
+	1    8850 5300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9200 5300 8850 5300
+$Comp
+L Motor:Motor_DC M5
+U 1 1 5CF25668
+P 10850 5200
+F 0 "M5" H 11008 5196 50  0000 L CNN
+F 1 "xt60" H 11008 5105 50  0000 L CNN
+F 2 "Morita:XT60PT-F" H 10850 5110 50  0001 C CNN
+F 3 "~" H 10850 5110 50  0001 C CNN
+	1    10850 5200
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	10850 5400 10000 5400
+Wire Wire Line
+	9200 5100 9200 4900
+Wire Wire Line
+	9200 4900 10850 4900
+Wire Wire Line
+	9200 5200 8350 5200
+Wire Wire Line
+	10000 5300 10100 5300
+Wire Wire Line
+	10100 5300 10100 5600
+Wire Wire Line
+	10100 5600 8350 5600
+$Comp
+L Isolator:TLP627 U10
+U 1 1 5CF25675
+P 7950 5700
+F 0 "U10" H 8150 5900 50  0000 C CNN
+F 1 "TLP627" H 7800 5900 50  0000 C CNN
+F 2 "Package_DIP:DIP-4_W7.62mm" H 7650 5500 50  0001 L CIN
+F 3 "https://toshiba.semicon-storage.com/info/docget.jsp?did=16914&prodName=TLP627" H 7950 5700 50  0001 L CNN
+	1    7950 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDPWR #PWR060
+U 1 1 5CF2567B
+P 8600 5400
+F 0 "#PWR060" H 8600 5200 50  0001 C CNN
+F 1 "GNDPWR" H 8800 5350 50  0000 C CNN
+F 2 "" H 8600 5350 50  0001 C CNN
+F 3 "" H 8600 5350 50  0001 C CNN
+	1    8600 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDPWR #PWR061
+U 1 1 5CF25681
+P 8600 5800
+F 0 "#PWR061" H 8600 5600 50  0001 C CNN
+F 1 "GNDPWR" H 8800 5750 50  0000 C CNN
+F 2 "" H 8600 5750 50  0001 C CNN
+F 3 "" H 8600 5750 50  0001 C CNN
+	1    8600 5800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8600 5800 8350 5800
+Wire Wire Line
+	8350 5400 8600 5400
+Wire Wire Line
+	10000 5100 10200 5100
+Wire Wire Line
+	10200 5100 10200 5900
+$Comp
+L Device:Q_NMOS_GDS Q5
+U 1 1 5CF2568B
+P 10100 6100
+F 0 "Q5" H 10306 6146 50  0000 L CNN
+F 1 "Q_NMOS_GDS" H 10306 6055 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-247-3_Vertical" H 10300 6200 50  0001 C CNN
+F 3 "~" H 10100 6100 50  0001 C CNN
+	1    10100 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+24V #PWR065
+U 1 1 5CF25691
+P 9100 5400
+F 0 "#PWR065" H 9100 5250 50  0001 C CNN
+F 1 "+24V" H 8950 5450 50  0000 C CNN
+F 2 "" H 9100 5400 50  0001 C CNN
+F 3 "" H 9100 5400 50  0001 C CNN
+	1    9100 5400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9100 5400 9200 5400
+$Comp
+L MD_2016_remake_v2-rescue:TLP152(E(T-SamacSys_Parts IC5
+U 1 1 5CF2569E
+P 7550 6000
+F 0 "IC5" H 7850 5650 50  0000 C CNN
+F 1 "TLP152" H 8200 5650 50  0000 C CNN
+F 2 "SamacSys_Parts:SOIC127P700X220-6N" H 8600 6100 50  0001 L CNN
+F 3 "http://uk.rs-online.com/web/p/products/8851275P" H 8600 6000 50  0001 L CNN
+F 4 "Toshiba TLP152(E(T Photo IC Output Optocoupler, Surface Mount, 5-Pin SO6" H 8600 5900 50  0001 L CNN "Description"
+F 5 "2.2" H 8600 5800 50  0001 L CNN "Height"
+F 6 "8851275P" H 8600 5700 50  0001 L CNN "RS Part Number"
+F 7 "http://uk.rs-online.com/web/p/products/8851275P" H 8600 5600 50  0001 L CNN "RS Price/Stock"
+F 8 "Toshiba" H 8600 5500 50  0001 L CNN "Manufacturer_Name"
+F 9 "TLP152(E(T" H 8600 5400 50  0001 L CNN "Manufacturer_Part_Number"
+	1    7550 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R25
+U 1 1 5CF256A4
+P 10050 6300
+F 0 "R25" V 9950 6300 50  0000 C CNN
+F 1 "N/A" V 10050 6300 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 9980 6300 50  0001 C CNN
+F 3 "~" H 10050 6300 50  0001 C CNN
+	1    10050 6300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R24
+U 1 1 5CF256AA
+P 9350 6100
+F 0 "R24" V 9250 6100 50  0000 C CNN
+F 1 "Rg" V 9350 6100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 9280 6100 50  0001 C CNN
+F 3 "~" H 9350 6100 50  0001 C CNN
+	1    9350 6100
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9200 6100 8750 6100
+Wire Wire Line
+	9500 6100 9900 6100
+Wire Wire Line
+	9900 6100 9900 6300
+Connection ~ 9900 6100
+$Comp
+L power:GNDPWR #PWR066
+U 1 1 5CF256B4
+P 10200 6400
+F 0 "#PWR066" H 10200 6200 50  0001 C CNN
+F 1 "GNDPWR" H 10400 6350 50  0000 C CNN
+F 2 "" H 10200 6350 50  0001 C CNN
+F 3 "" H 10200 6350 50  0001 C CNN
+	1    10200 6400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10200 6400 10200 6300
+Connection ~ 10200 6300
+$Comp
+L power:GND #PWR057
+U 1 1 5CF256BC
+P 7550 5400
+F 0 "#PWR057" H 7550 5150 50  0001 C CNN
+F 1 "GND" H 7450 5300 50  0000 C CNN
+F 2 "" H 7550 5400 50  0001 C CNN
+F 3 "" H 7550 5400 50  0001 C CNN
+	1    7550 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR058
+U 1 1 5CF256C2
+P 7550 5800
+F 0 "#PWR058" H 7550 5550 50  0001 C CNN
+F 1 "GND" H 7450 5700 50  0000 C CNN
+F 2 "" H 7550 5800 50  0001 C CNN
+F 3 "" H 7550 5800 50  0001 C CNN
+	1    7550 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR059
+U 1 1 5CF256C8
+P 7550 6200
+F 0 "#PWR059" H 7550 5950 50  0001 C CNN
+F 1 "GND" H 7450 6100 50  0000 C CNN
+F 2 "" H 7550 6200 50  0001 C CNN
+F 3 "" H 7550 6200 50  0001 C CNN
+	1    7550 6200
+	1    0    0    -1  
+$EndComp
+NoConn ~ 7550 6100
+$Comp
+L power:+12V #PWR063
+U 1 1 5CF256CF
+P 8900 6000
+F 0 "#PWR063" H 8900 5850 50  0001 C CNN
+F 1 "+12V" H 9050 6050 50  0000 C CNN
+F 2 "" H 8900 6000 50  0001 C CNN
+F 3 "" H 8900 6000 50  0001 C CNN
+	1    8900 6000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8900 6000 8750 6000
+$Comp
+L power:GNDPWR #PWR064
+U 1 1 5CF256D6
+P 8900 6200
+F 0 "#PWR064" H 8900 6000 50  0001 C CNN
+F 1 "GNDPWR" H 9100 6150 50  0000 C CNN
+F 2 "" H 8900 6150 50  0001 C CNN
+F 3 "" H 8900 6150 50  0001 C CNN
+	1    8900 6200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8900 6200 8750 6200
+$Comp
+L Device:C_Small C5
+U 1 1 5CF256DD
+P 8900 6100
+F 0 "C5" H 8992 6146 50  0000 L CNN
+F 1 "0.1u" H 8992 6055 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 8900 6100 50  0001 C CNN
+F 3 "~" H 8900 6100 50  0001 C CNN
+	1    8900 6100
+	1    0    0    -1  
+$EndComp
+Connection ~ 8900 6000
+Connection ~ 8900 6200
+Text HLabel 7550 5200 0    50   Input ~ 0
+A
+Text HLabel 7550 5600 0    50   Input ~ 0
+B
+Text HLabel 7550 6000 0    50   Input ~ 0
+PWM
+$EndSCHEMATC
