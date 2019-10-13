@@ -1,5 +1,7 @@
 //Morita Daiki 2019 @NIT.yonago
 //マイコン:arduino pro mini 互換（自作）
+//👆See KiCad/wii_controller
+
 #include <WiiChuck.h> //Wiiのライブラリを使う
 
 Accessory Wii; //つないだアクセサリーの名前をWiiとする
