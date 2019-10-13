@@ -29,10 +29,10 @@ void hanging_system::air_change()
 }
 void hanging_system::hang(boolean hang_pos, unsigned int deg1, unsigned int deg2) //指定したほうに供給(deg2=初期位置)
 {
-    if (!air_is_moving)
+    if (!air_is_moving) //エアが動作中でないときのみリクエスト受けつけ
     {
-        deg_1 = deg1;
-        deg_2 = deg2;
+        deg_1 = deg1;                 //供給角度
+        deg_2 = deg2;                 //停止角度
         has_requested_hanging = true; //供給リクエスト
         if (now_air_pos != hang_pos)  //今供給不可能位置なら
             air_change();             //エアを逆にして，
@@ -40,7 +40,7 @@ void hanging_system::hang(boolean hang_pos, unsigned int deg1, unsigned int deg2
 }
 void hanging_system::empty_hang(boolean hang_pos) //かけずに指定されたほうを上げる
 {
-    if (!air_is_moving)
+    if (!air_is_moving)              //エアが動作中でないときのみリクエスト受けつけ
         if (now_air_pos == hang_pos) //逆位置なら
             air_change();            //エアを逆にする
 }
@@ -66,21 +66,21 @@ void hanging_system::always_run_function() //常時動作して状態更新関�
     }
     if ((millis() - supply_start_time) > (t_1 + t_2)) //サーボ動作停止for省電力
     {
-        spp.detach();
-        spm.detach();
+        spp.detach(); //サーボOFF
+        spm.detach(); //サーボOFF
     }
 }
 void hanging_system::servo_move(int deg) //サーボ動作関数
 {
     if (now_air_pos == 0) //今下なら
     {
-        spm.attach(servo_m);
-        spm.write(deg); //下の供給地点に供給
+        spm.attach(servo_m); //サーボ稼働
+        spm.write(deg);      //下の供給地点に供給
     }
     else if (now_air_pos == 1) //今上なら
     {
-        spp.attach(servo_p);
-        spp.write(deg); //上の供給地点に供給
+        spp.attach(servo_p); //サーボ稼働
+        spp.write(deg);      //上の供給地点に供給
     }
 }
 

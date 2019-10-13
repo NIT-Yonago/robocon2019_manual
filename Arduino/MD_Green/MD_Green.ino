@@ -5,36 +5,35 @@
 // #include <serial_communication_v0.h>
 #include "PwmMotor.h"
 #include "gyro_integral.h"
-//上下，前後，つかむ
-const int air_pin[3] = {A1, A2, A3};
-boolean air_state[3];
-int speed[3];
-// uint8_t values[5];
 
-unsigned long serial_tim_last = 0, gyro_tim_last = 0;
-boolean sta13 = false, enkaige = false;
-float want_deg = 0, rot = 0.0, error_angle = 0.0;
-int vx, vy, vrot, vrot_old;
+const int air_pin[3] = {A1, A2, A3}; //上下，前後，つかむ
+boolean air_state[3];                //現在のエア状態
+int speed[3];                        //モータ速度
+
+unsigned long serial_tim_last = 0, gyro_tim_last = 0; //ループ監視用時間保持変数
+boolean sta13 = false, enkaige = false;               //LED状態，宴会芸（回転補正）フラグ
+float want_deg = 0, rot = 0.0, error_angle = 0.0;     //目標角，回転成分,角度誤差
+int vx, vy, vrot, vrot_old;                           //X速度，Y速度，旋回速度，過去旋回速度
 
 PwmMotor motor[3] = {
+    //cw,ccw,pwm
     PwmMotor(4, 2, 3),
     PwmMotor(7, 5, 6),
     PwmMotor(A0, 8, 9),
-
 };
-gyro_integral gyro_1;
+gyro_integral gyro_1; //ジャイロセンサの名前
 
-void setup()
+void setup() //初期設定
 {
     for (int i = 0; i < 3; i++)
-        pinMode(air_pin[i], OUTPUT);
-    pinMode(13, OUTPUT);
-    Serial.begin(115200); //hunging_systemとの通信速度を変更
-    Serial.println("tim,want,jsx,d/s,fild/s,angl");
-    gyro_1.init(500);
+        pinMode(air_pin[i], OUTPUT);                //出力に設定
+    pinMode(13, OUTPUT);                            //LED Pin
+    Serial.begin(115200);                           //hunging_systemとの通信速度を変更
+    Serial.println("tim,want,jsx,d/s,fild/s,angl"); //index print
+    gyro_1.init(500);                               //ジャイロ初期オフセット計算（５００回）
 }
 
-void loop()
+void loop() //メインループ
 {
     if ((millis() - gyro_tim_last) > 4) //4ms以上経過したら積分
     {
@@ -120,30 +119,29 @@ void air_move(uint8_t air_cmd) //0:上下,1:前後,2:爪
         digitalWrite(air_pin[i], air_state[i]);
 }
 
-void omni(int vx, int vy, float vrot)
+void omni(int vx, int vy, float vtheta)
 {
-    float vtheta = vrot;
-    float v = sqrt(vx * vx + vy * vy) * 4.0;
-    float theta = atan2(vy, vx);
-    float R[3] = {1.0, 1.0, 1.0};
-    for (int i = 0; i < 3; i++)
+    float v = sqrt(vx * vx + vy * vy) * 4.0; //速度は半径＊４
+    float theta = atan2(vy, vx);             //方向はatan^-1(y/x)
+    float R[3] = {1.0, 1.0, 1.0};            //ロボットのタイヤ配置（中心に近いと回転速度低下）
+    for (int i = 0; i < 3; i++)              //各モータに対して．
         speed[i] = -v * cos(theta + PI - PI * 2.0 / 3.0 * i) - vtheta * R[i];
-    int max = 255;
-    for (int i = 0; i < 3; i++)
+    int max = 255;              //最大値（仮）
+    for (int i = 0; i < 3; i++) //最大値更新
         max = max(abs(speed[i]), max);
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 3; i++) //各モータに対して．
     {
-        speed[i] = map(speed[i], -max, max, -255, 255);
-        motor[i].speed(speed[i]);
+        speed[i] = map(speed[i], -max, max, -255, 255); //更新した最大値で正規化
+        motor[i].speed(speed[i]);                       //モーター回転
     }
 }
 
-void reset()
+void reset() //リセット
 {
-    vx = 0; //速度0
-    vy = 0; //速度0
-    vrot = 0;
-    vrot_old = 0;
+    vx = 0;                   //速度0
+    vy = 0;                   //速度0
+    vrot = 0;                 //旋回０
+    vrot_old = 0;             //過去旋回０
     omni(0, 0, 0);            //スピードオフ
     want_deg = 0.0;           //目標リセット
     gyro_1.robot_angle = 0.0; //ロボット角度リセット
