@@ -65,9 +65,9 @@ void loop()
             Serial.readBytes(read_data, 4); //受信
             serial_tim_last = millis();     //シリアルの受信時間更新
 
-            vx = read_data[0] - 31;      //-31~32
-            vy = read_data[1] - 31;      //-31~32
-            vrot = -(read_data[2] - 15); //-15~16
+            vx = read_data[0] - 31;   //-31~32
+            vy = read_data[1] - 31;   //-31~32
+            vrot = read_data[2] - 15; //-15~16
             air_move(read_data[3]);
         }
     }
@@ -127,7 +127,7 @@ void omni(int vx, int vy, float vrot)
     float theta = atan2(vy, vx);
     float R[3] = {1.0, 1.0, 1.0};
     for (int i = 0; i < 3; i++)
-        speed[i] = -v * cos(theta + PI - PI * 2.0 / 3.0 * i) - vtheta * R[i];
+        speed[i] = v * cos(theta - PI * 2.0 / 3.0 * i) + vtheta * R[i];
     int max = 255;
     for (int i = 0; i < 3; i++)
         max = max(abs(speed[i]), max);
