@@ -29,7 +29,7 @@ void setup()
     for (int i = 0; i < 3; i++)
         pinMode(air_pin[i], OUTPUT);
     pinMode(13, OUTPUT);
-    Serial.begin(115200);
+    Serial.begin(115200); //hunging_systemとの通信速度を変更
     Serial.println("tim,want,jsx,d/s,fild/s,angl");
     gyro_1.init(500);
 }
