@@ -8,18 +8,19 @@ const int degmA[2] = {90, 170}; //サーボA-minus
 const int degpB[2] = {90, 170}; //サーボA-plus
 const int degmB[2] = {90, 170}; //サーボA-minus
 
-//上の時の供給，下の時の供給,エアー，上の供給角度
-//spp,spm,air,degpdef,degmdef,t1,t2,tc
+//上時供給，下時供給,上下エア，上初期角,下初期角，供給サーボON時間，サーボ戻り時間，エア変時間
+//                  spp,spm,air, degpdef,  degmdef,  t1,  t2,   tc
 hanging_system unit_A(2, 3, 11, degpA[0], degmA[0], 500, 300, 1000);
 hanging_system unit_B(4, 5, 12, degpB[0], degmB[0], 500, 300, 1000);
 
 // SoftwareSerial mdblack(A1, A0); //rx,txモタドらへの送信
+//👆シリアルをXbeeと共用にしたので削除
 
-uint8_t mdblack_datas[4]; //モタドらへの送信データ
+uint8_t mdblack_datas[4]; //モタドらへの送信データ//X,Y,theta,button
 
-boolean now_button_state[15];  //現在ボタン
-boolean last_button_state[15]; //1個前ボタン
-boolean button_rize[15];       //ボタンが立ち上がったか
+boolean now_button_state[15];  //現在のボタン
+boolean last_button_state[15]; //1個前のボタン
+boolean button_rize[15];       //ボタン立ち上がり
 int sta13 = 0;                 //LEDちかちか用
 void setup()
 {
@@ -44,9 +45,9 @@ void loop()
          Serial.readBytes(values, 19); //データ読みこみ
 
          //ボタン現状態と立ち上がり検知
-         for (int i = 0; i < 15; i++) //0~14はWiiのボタンデータ
-         {
-            now_button_state[i] = (values[i] > 0);                         //現在ボタン更新(>0なのは，ZやLボタンが0~16みたいな値を持つから)
+         for (int i = 0; i < 15; i++)                                      //0~14はWiiのボタンデータ
+         {                                                                 //A,X,Y,B,P,H,M,R,U,L,D,L.ZL.R,ZR
+            now_button_state[i] = values[i];                               //1or0
             button_rize[i] = !last_button_state[i] && now_button_state[i]; //前０で今１だと立ち上がり
             last_button_state[i] = now_button_state[i];                    //今を過去に
          }
@@ -54,12 +55,12 @@ void loop()
          mdblack_datas[0] = values[15];                   //LX
          mdblack_datas[1] = values[16];                   //LY
          mdblack_datas[2] = values[17];                   //XR
-         mdblack_datas[3] = (button_rize[0] << 0) |       //開閉
-                            (now_button_state[7] << 1) |  //出っ張る
-                            (now_button_state[9] << 2) |  //縮む
-                            (now_button_state[8] << 3) |  //↑
-                            (now_button_state[10] << 4) | //↓
-                            ((now_button_state[1] &&      //X&
+         mdblack_datas[3] = (button_rize[0] << 0) |       //開閉(A)
+                            (now_button_state[7] << 1) |  //出っ張る(R)
+                            (now_button_state[9] << 2) |  //縮む(L)
+                            (now_button_state[8] << 3) |  //上昇(U)
+                            (now_button_state[10] << 4) | //下降(D)
+                            ((now_button_state[1] &&      //X&&
                               now_button_state[5])        //HOME
                              << 5) |                      //
                             (now_button_state[2]) << 6;   //Y
@@ -71,6 +72,7 @@ void loop()
          Serial.write(mdblack_datas, 4);
          // send_bytes(mdblack, send_datas, 5); //モーターとエアのデータ送信
 
+         //TODO ⊕ボタンでかけるにするほうがいい?
          if (!now_button_state[6]) //⊖ボタン押してない（普通に供給してかっけるとき）
          {
             //右
